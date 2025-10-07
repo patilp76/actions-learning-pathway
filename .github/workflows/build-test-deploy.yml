@@ -63,6 +63,5 @@ jobs:
         with: 
           path: "./out"
 
-      - name: deploy
-        id: deployment
-        uses: actions/deploy-pages@v1       
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4.7.3     
