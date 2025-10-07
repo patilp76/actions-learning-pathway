@@ -1,17 +1,17 @@
 name: build-test-deploy
 on: push
 jobs: 
-  build: 
+  build:
     runs-on: ubuntu-latest
     steps: 
-      - name: checkout code 
+      - name: checkout repo
         uses: actions/checkout@v3
       - name: use node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18.x'
-      - run: npm install 
-      - run: npm run build
+      - run: npm install
+      - run: npm run build 
   test: 
     needs: build
     runs-on: ubuntu-latest
@@ -23,7 +23,4 @@ jobs:
         with:
           node-version: '18.x'
       - run: npm install
-      - run: npm run lint
-        continue-on-error: true
       - run: npm test
-      
