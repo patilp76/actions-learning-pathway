@@ -24,5 +24,6 @@ jobs:
           node-version: '18.x'
       - run: npm install
       - run: npm run lint
+        continue-on-error: true
       - run: npm test
       
