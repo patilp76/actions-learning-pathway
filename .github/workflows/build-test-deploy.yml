@@ -64,4 +64,6 @@ jobs:
           path: "./out"
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4.7.3     
+        uses: JamesIves/github-pages-deploy-action@v4.7.3  
+        with:
+          folder: build
