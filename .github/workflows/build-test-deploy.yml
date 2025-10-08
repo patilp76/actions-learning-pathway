@@ -28,6 +28,7 @@ jobs:
       - run: npm test
         continue-on-error: true
   deploy:
+   needs: build
     permissions:
       contents: write
       pages: write     
