@@ -15,3 +15,5 @@ jobs:
       - name: Checkout repository code
         uses: actions/checkout@v3
       - run: echo "$(cat hello_world.txt)"
+      - name: Adding markdown
+        run: echo '### Ran Successfully! 🚀' >> $GITHUB_STEP_SUMMARY
