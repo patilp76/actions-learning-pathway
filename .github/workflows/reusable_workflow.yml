@@ -15,5 +15,10 @@ jobs:
       - name: Checkout repository code
         uses: actions/checkout@v3
       - run: echo "$(cat hello_world.txt)"
-      - name: Adding markdown
-        run: echo ":white_check_mark:Successfully restored the \`${DB_NAME}\` to the :rocket:\`${POD_NAME}\` pod." >> $GITHUB_STEP_SUMMARY
+      - name: Generate list using Markdown
+        run: |
+              echo "## Following are the Details of the restore workflow" >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY # this is a blank line
+              echo "- database restored = ${DB_NAME}" >> $GITHUB_STEP_SUMMARY
+              echo "- Pod in which database restored = ${POD_NAME}" >> $GITHUB_STEP_SUMMARY
+              echo "- S3 Path Used = ${BACKUP_FILE_PATH}" >> $GITHUB_STEP_SUMMARY
